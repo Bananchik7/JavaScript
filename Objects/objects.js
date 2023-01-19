@@ -27,9 +27,31 @@ let obj = {
   "d 4": 4,
   e5: 5,
 };
-
 console.log(obj["1a"]);
 console.log(obj.b2);
 console.log(obj["c-c"]);
 console.log(obj["d 4"]);
 console.log(obj.e5);
+
+// Получите массив ключей следующего объекта.
+let obj1 = { x: 1, y: 2, z: 3 };
+let keys = Object.keys(obj1);
+alert(keys);
+alert(Object.keys(obj1).length);
+
+// Исправьте ошибку, допущенную в следующем коде.
+let obj2 = { x: 1, y: 2, z: 3 };
+console.log(obj2["x"]);
+let key = "x";
+console.log(obj2[key]);
+let prop = "x";
+console.log(obj2[prop]);
+let obj3 = {
+  [key]: 1,
+  y: 2,
+  z: 3,
+};
+
+// Скажите, что выведется в консоль в результате выполнения следующего кода.
+console.log("x" in obj1);
+console.log("w" in obj1);
