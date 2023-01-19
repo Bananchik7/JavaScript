@@ -55,3 +55,15 @@ let obj3 = {
 // Скажите, что выведется в консоль в результате выполнения следующего кода.
 console.log("x" in obj1);
 console.log("w" in obj1);
+
+// Код должен вывести элемент объекта.
+let object1 = { x: 1, y: 2, z: 3 };
+console.log(object1["x"]);
+
+// Код должен вывести элемент объекта по ключу из переменной.
+let keys1 = "x";
+console.log(object1[keys1]);
+
+// Код должен вывести сумму элементов объекта.
+let sum = object1["x"] + object1["y"] + object1["x"];
+console.log(sum);
