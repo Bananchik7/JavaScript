@@ -1,11 +1,38 @@
 "use strict";
 // Сделайте функцию, которая параметром будет принимать массив и возвращать сумму его элементов.
+function summ(arr) {
+  let sum = 0;
+  for (let elem of arr) {
+    sum += elem;
+  }
+  console.log(sum);
+}
+summ([1, 2, 3]);
 
 // Сделайте функцию, которая параметром будет принимать число и возвращать массив его делителей.
+function divisorArr(number) {
+  let res = [];
+  for (let i = 1; i <= number; i++) {
+    if (number % i == 0) {
+      res.push(i);
+    }
+  }
+  return res;
+}
+console.log(divisorArr(20));
 
 // Сделайте функцию, которая параметром будет принимать строку и возвращать массив ее символов.
+function arrCharacter(str) {
+  let arr = [];
+  for (let elem of str) {
+    arr.push(elem);
+  }
+  console.log(arr);
+}
+arrCharacter("hello");
 
 // Сделайте функцию, которая параметром будет принимать строку и переворачивать ее символы в обратном порядке.
+function back(str) {}
 
 // Сделайте функцию, которая параметром будет принимать строку и делать заглавной первую букву этой строки.
 
