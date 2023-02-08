@@ -1,5 +1,5 @@
 "use strict";
-// Преобразуйте последнюю букву строки в верхний регистр.
+// Преобразуйте первую букву строки в верхний регистр.
 let str = "london";
 let result = str.slice(0, 1).toUpperCase() + str.slice(1);
 console.log(result);
