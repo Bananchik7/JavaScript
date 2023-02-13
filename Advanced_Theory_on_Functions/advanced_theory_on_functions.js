@@ -89,12 +89,56 @@ function func31() {
 test1(func11, func21, func31);
 
 // Модифицируйте предыдущую задачу так, чтобы функции были объявлены как Function Expression с теми же именами.
-let func11 = function () {
+let func12 = function () {
   return 1;
 };
-let func21 = function () {
+let func22 = function () {
   return 2;
 };
-let func31 = function () {
+let func32 = function () {
   return 3;
 };
+
+// Сделайте функцию func1, которая будучи вызвана вот так: func1()(), вернет число 1. Сделайте аналогичную функцию func2, возвращающую число 2. Найдите сумму результатов этих функций.
+function func13() {
+  return function () {
+    return 1;
+  };
+}
+function func23() {
+  return function () {
+    return 2;
+  };
+}
+console.log(func13()() + func23()());
+
+// Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4), вернет сумму переданных в параметры чисел.
+function func14(num) {
+  return function (num1) {
+    return function (num2) {
+      return num + num1 + num2;
+    };
+  };
+}
+console.log(func14(2)(3)(4));
+
+// Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.
+function func15(num) {
+  return function (num1) {
+    return function (num2) {
+      return function (num3) {
+        return function (num4) {
+          return [num, num1, num2, num3];
+        };
+      };
+    };
+  };
+}
+console.log(func15(2)(3)(4)(5)());
+
+// Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+(function (num) {
+  return function (num1) {
+    console.log(num + num1);
+  };
+})(1)(2);
