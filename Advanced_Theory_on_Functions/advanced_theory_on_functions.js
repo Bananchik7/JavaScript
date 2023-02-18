@@ -144,3 +144,51 @@ console.log(func15(2)(3)(4)(5)());
 })(1)(2);
 
 // Дан массив с числами. С помощью созданной нами функции each увеличьте каждый элемент в два раза.
+function each(arr, callback) {
+  let result = [];
+  for (let elem of arr) {
+    result.push(callback(elem));
+  }
+  return result;
+}
+let result = each([1, 2, 3, 4, 5], function (num) {
+  return num ** 2;
+});
+console.log(result);
+
+// Дан массив со строками. С помощью созданной нами функции each переверните символы каждой строки в обратном порядке.
+let result1 = each(["abc", "bce", "ced"], function (str) {
+  return str.split("").reverse().join("");
+});
+console.log(result1);
+
+// Упростите коллбэк через стрелочную функцию.
+// let result2 = every([1, 2, 3, 4, 5], (elem) => elem > 0);
+
+// С помощью рекурсии выведите элементы этого массива в консоль.
+let arr1 = [1, 2, 3, 4, 5];
+function array(arr) {
+  console.log(arr.shift());
+
+  if (arr.length != 0) {
+    array(arr);
+  }
+}
+array(arr1);
+
+// С помощью рекурсии выведите все примитивные элементы этого объекта в консоль.
+let obj1 = {
+  a: 1,
+  b: { c: 2, d: 3, e: 4 },
+  f: { g: 5, j: 6, k: { l: 7, m: { n: 8, o: 9 } } },
+};
+function obj(obj) {
+  for (let key of obj) {
+    if (typeof elem == "object") {
+      obj(elem);
+    } else {
+      console.log(elem);
+    }
+  }
+}
+obj(obj1);
