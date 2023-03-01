@@ -128,4 +128,58 @@ button12.addEventListener("click", function () {
   console.log((elem16.type = image.src));
 });
 
-//
+// Дан инпут и кнопка. По нажатию на кнопку запишите в инпут какой-нибудь текст.
+let elem18 = document.querySelector("#elem18");
+let button13 = document.querySelector("#button13");
+button13.addEventListener("click", function () {
+  elem18.value = "new text";
+});
+
+// Дан инпут. По получению фокуса запишите в него число 1, а по потери фокуса - число 2.
+let elem19 = document.querySelector("#elem19");
+elem19.addEventListener("focus", function () {
+  console.log(elem19.value);
+});
+elem19.addEventListener("blur", function () {
+  console.log((elem19.value = 2));
+});
+
+// Дана также кнопка. По нажатию на кнопку прочитайте и выведите на экран значение атрибута class нашего дива.
+let element1 = document.querySelector("#element1");
+let button20 = document.querySelector("#button20");
+button20.addEventListener("click", function () {
+  console.log(element1.className);
+});
+
+// Переделайте приведенный выше код так, чтобы вместо введения переменной image использовалась цепочка.
+console.log(document.querySelector("#image1").src);
+
+// Дан инпут. По получению фокуса этим инпутом запишите в него число 1, а по потери фокуса - число 2. Для обращения у инпуту внутри функции-обработчика используйте объект this.
+let elem20 = document.querySelector("#elem20");
+elem20.addEventListener("focus", function () {
+  this.value = "1";
+});
+elem20.addEventListener("blur", function () {
+  this.value = "2";
+});
+
+// Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по клику на эту кнопку ее значение каждый раз увеличивалось на единицу.
+let button21 = document.querySelector("#button21");
+button21.addEventListener("click", function () {
+  this.value = 1 + Number(button21.value);
+});
+
+// Даны 5 абзацев с какими-то текстами. По клику на любой абзац запишите в конец его текста восклицательный знак.
+let elem21 = document.querySelector("#elem21");
+let elem22 = document.querySelector("#elem22");
+let elem23 = document.querySelector("#elem23");
+let elem24 = document.querySelector("#elem24");
+let elem25 = document.querySelector("#elem25");
+elem21.addEventListener("click", func4);
+elem22.addEventListener("click", func4);
+elem23.addEventListener("click", func4);
+elem24.addEventListener("click", func4);
+elem25.addEventListener("click", func4);
+function func4() {
+  this.textContent += "!";
+}
