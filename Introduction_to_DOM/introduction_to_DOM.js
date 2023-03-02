@@ -183,3 +183,31 @@ elem25.addEventListener("click", func4);
 function func4() {
   this.textContent += "!";
 }
+
+// Даны абзацы и кнопка. По нажатию на кнопку найдите все абзацы, переберите их циклом и установите текст каждого абзаца в значение 'text'.
+let elems = document.querySelectorAll(".www");
+let button22 = document.querySelector("#button22");
+button22.addEventListener("click", function () {
+  for (let elem of elems) {
+    elem.textContent = "text";
+  }
+});
+
+// Даны также инпуты. Сделайте так, чтобы по потери фокуса в любом из наших инпутов выполнялась приведенная выше функция.
+let elems1 = document.querySelectorAll("input");
+for (let elem of elems) {
+  elem.addEventListener("blur", function () {
+    this.value = Number(this.value) + 1;
+  });
+}
+
+// Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по клику на эту кнопку ее значение каждый раз увеличивалось на единицу. После того, как значение кнопки достигнет 10 - отвяжите обработчик события, чтобы кнопка больше не реагировала на нажатие.
+let button23 = document.querySelector("#button23");
+button23.addEventListener("click", func5);
+function func5() {
+  if (Number(button23.value) < 10) {
+    this.value = Number(this.value) + 1;
+  } else {
+    this.removeEventListener("click", func5);
+  }
+}
