@@ -211,3 +211,65 @@ function func5() {
     this.removeEventListener("click", func5);
   }
 }
+
+// Даны абзацы. По нажатию на любой из абзацев добавьте ему в конец восклицательный знак. Сделайте так, чтобы это добавление происходило лишь по первому нажатию.
+let elems2 = document.querySelectorAll("p");
+for (let elem of elems2) {
+  elem.addEventListener("click", func6);
+}
+function func6() {
+  this.textContent = this.textContent + "!";
+  this.removeEventListener("click", func6);
+}
+
+// Дан список ul, в каждом пункте которого записано число. Сделайте так, чтобы по клику на любую li ее число увеличивалось на единицу.
+let elems3 = document.querySelectorAll("li");
+for (let elem of elems3) {
+  elem.addEventListener("click", function func() {
+    this.textContent = Number(this.textContent) + 1;
+    this.removeEventListener("click", func);
+  });
+}
+
+// Получите значение его атрибута value.
+let elem26 = document.querySelector("#elem26");
+let value = elem26.getAttribute("value");
+console.log(value);
+
+// Узнайте количество его классов.
+let elem27 = document.querySelector("#elem27");
+let length = elem27.classList.length;
+console.log(length);
+
+// Найдите первого потомка этого элемента и сделайте его текст красного цвета.
+let elem28 = document.querySelector("#elem28");
+let text = elem28.firstElementChild.innerHTML;
+console.log(text);
+
+// Найдите его родителя.
+let elem29 = document.querySelector("#elem29");
+let id = elem29.parentElement.id;
+console.log(id);
+
+// Сделайте так, чтобы по клику на див в конец его текста добавилось содержимое его атрибута data-text.
+let elem30 = document.querySelector("#elem30");
+elem30.addEventListener("click", function () {
+  this.textContent = this.textContent + this.dataset.text;
+});
+
+// Сделайте так, чтобы по клику на див в конец его текста добавлялась стоимость покупки, равная цене, умноженной на количество.
+let elem31 = document.querySelector("#elem31");
+elem31.addEventListener("click", function () {
+  this.textContent =
+    this.textContent +
+    Number(this.dataset.productPrice) * Number(this.dataset.productAmount);
+});
+
+// Переберите циклом все узлы этого дива и выведите их в консоль.
+let elem32 = document.querySelector("#elem32");
+for (let node of elem32.childNodes) {
+  console.log(node);
+}
+for (let node of elem32.tagName) {
+  console.log(node);
+}
