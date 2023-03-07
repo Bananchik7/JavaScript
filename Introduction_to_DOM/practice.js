@@ -110,8 +110,12 @@ element15.addEventListener("blur", function () {
 
 // Даны несколько абзацев и кнопка. По нажатию на кнопку запишите в конец каждого абзаца его порядковый номер.
 let button1 = document.querySelector("#button1");
-let elements = document.querySelectorAll("p");
-button1.addEventListener("click", function () {});
+let elements = document.querySelectorAll("#text");
+button1.addEventListener("click", function () {
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].innerHTML = elements[i].innerHTML + (i + 1);
+  }
+});
 
 // Даны ссылки. Добавьте в конец каждой ссылки ее href в круглых скобках.
 
