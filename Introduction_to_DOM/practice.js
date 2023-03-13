@@ -218,20 +218,10 @@ button5.addEventListener("click", function () {
   }
 });
 
-// Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По нажатию на кнопку перемешайте введенные символы случайным образом и запишите ее обратно в инпут.
+// Дан инпут, кнопка и абзац. В инпут вводится температура в градусах Фаренгейта. По клику на кнопку выведите в абзац температуру в градусах Цельсия.
 let element28 = document.querySelector("#element28");
 let button6 = document.querySelector("#button6");
-button6.addEventListener("click", random);
-function random() {
-  let str = "";
-  for (let i = 0; i < 8; i++) {
-    str += element28[i].charAt(Math.floor(Math.random() * element28[i].length));
-    element28.value = str;
-  }
-}
-
-// Дан инпут, кнопка и абзац. В инпут вводится температура в градусах Фаренгейта. По клику на кнопку выведите в абзац температуру в градусах Цельсия.
-
-// Дан инпут, кнопка и абзац. В инпут вводится число. По нажатию на кнопку выведите в абзац факториал этого числа.
-
-// Даны 3 инпута, кнопка и абзац. В инпуты вводятся коэффициенты квадратного уравнения. По нажатию на кнопку найдите корни этого уравнения и выведите их в абзац.
+let element29 = document.querySelector("#element29");
+button6.addEventListener("click", function () {
+  element29.textContent = Number(element28.value) - 32 * (5 / 9);
+});
