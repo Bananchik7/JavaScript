@@ -118,24 +118,117 @@ button1.addEventListener("click", function () {
 });
 
 // Даны ссылки. Добавьте в конец каждой ссылки ее href в круглых скобках.
+let elements1 = document.querySelectorAll("#href");
+for (let i = 0; i < elements1.length; i++) {
+  elements1[i].innerHTML =
+    elements1[i].innerHTML + "(" + elements1[i].href + ")";
+}
 
 // Даны ссылки. Если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &rarr;).
-
+let elements2 = document.querySelectorAll("#href1");
+for (let i = 0; i < elements2.length; i++) {
+  if (elements2[i].href.indexOf("http://") == 0) {
+    elements2[i].innerHTML += String.fromCharCode(8594);
+  }
+}
 // Даны несколько абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится.
+let element16 = document.querySelector("#element16");
+let element17 = document.querySelector("#element17");
+let element18 = document.querySelector("#element18");
+element16.addEventListener("click", func);
+element17.addEventListener("click", func);
+element18.addEventListener("click", func);
+function func() {
+  this.textContent = Number(this.textContent) * Number(this.textContent);
+}
 
 // Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату.
+let element19 = document.querySelector("#element19");
+let element20 = document.querySelector("#element20");
+element19.addEventListener("blur", Day);
+function Day() {
+  let dayWeek = [
+    "воскресенье",
+    "понедельник",
+    "вторник",
+    "среда",
+    "четверг",
+    "пятница",
+    "суббота",
+  ];
+  let arr = element19.value.split(".");
+  arr.reverse();
+  let date = new Date(Number(arr[0]), Number(arr[1]) - 1, Number(arr[2]));
+
+  element20.innerHTML =
+    "день недели:" + date.getDay() + " - " + dayWeek[date.getDay()];
+}
 
 // Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута. Сделайте так, чтобы это значение не могло стать меньше нуля.
+let element21 = document.querySelector("#element21");
+let button2 = document.querySelector("#button2");
+let button3 = document.querySelector("#button3");
+button2.addEventListener("click", function () {
+  element21.value = Number(element21.value) + 1;
+});
+button3.addEventListener("click", function () {
+  element21.value = Number(element21.value) - 1;
+});
 
 // Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам.
+let element22 = document.querySelector("#element22");
+let element23 = document.querySelector("#element23");
+let element24 = document.querySelector("#element24");
+element23.addEventListener("click", clickNumber);
+element24.addEventListener("click", clickNumber);
+function clickNumber() {
+  element22.value = Number(element22.value) + 1;
+}
 
-// На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста
+// На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста.
+let element25 = document.querySelectorAll("#element25");
+let button4 = document.querySelector("#button4");
+button4.addEventListener("click", symbol10);
+function symbol10() {
+  for (let i = 0; i < element25.length; i++) {
+    element25[i].textContent = element25[i].textContent.slice(0, 20) + "...";
+  }
+}
 
 // Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100. Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный.
+let element26 = document.querySelector("#element26");
+element26.addEventListener("blur", color);
+function color() {
+  if (element26.value <= 100) {
+    element26.style.background = "green";
+  } else {
+    element26.style.background = "red";
+  }
+}
 
 // Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку из 8-ми символов и запишите в инпут.
+let element27 = document.querySelector("#element27");
+let button5 = document.querySelector("#button5");
+button5.addEventListener("click", function () {
+  let symbol = "0123456789йцукенгшщзхъфывапролджэёячсмитьбю";
+  let str = "";
+  for (let i = 0; i < 8; i++) {
+    str += symbol.charAt(Math.floor(Math.random() * symbol.length));
+    element27.value = str;
+  }
+});
 
 // Дан инпут и кнопка. Пользователь вводит в инпут какую-то строку. По нажатию на кнопку перемешайте введенные символы случайным образом и запишите ее обратно в инпут.
+let element28 = document.querySelector("#element28");
+let button6 = document.querySelector("#button6");
+button6.addEventListener("click", random);
+function random() {
+  let str = "";
+  for (let i = 0; i < 8; i++) {
+    str += element28[i].charAt(Math.floor(Math.random() * element28[i].length));
+    element28.value = str;
+  }
+}
 
 // Дан инпут, кнопка и абзац. В инпут вводится температура в градусах Фаренгейта. По клику на кнопку выведите в абзац температуру в градусах Цельсия.
 
